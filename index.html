@@ -28,32 +28,32 @@
 <!-- MODE GURU -->
 <section class="guru hidden" id="guruSection">
   <h2>🧑‍🏫 Mode Guru – Bank Soal</h2>
+  <div class="guru-form">
+    <select id="mapelGuru">
+      <option value="mtk">Matematika</option>
+      <option value="indo">Bahasa Indonesia</option>
+      <option value="ip">IPAS</option>
+      <option value="pai">PAI</option>
+    </select>
 
-  <select id="mapelGuru">
-    <option value="mtk">Matematika</option>
-    <option value="indo">Bahasa Indonesia</option>
-    <option value="ip">IPAS</option>
-    <option value="pai">PAI</option>
-  </select>
+    <select id="jenisSoal">
+      <option value="kuis">Soal Kuis</option>
+      <option value="game">Mini Game</option>
+    </select>
 
-  <select id="jenisSoal">
-    <option value="kuis">Soal Kuis</option>
-    <option value="game">Soal Mini Game</option>
-  </select>
+    <input id="soalBaru" placeholder="Tulis soal">
+    <input id="opsiA" placeholder="Opsi A / Jawaban / Link Gambar">
+    <input id="opsiB" placeholder="Opsi B">
+    <input id="opsiC" placeholder="Opsi C">
 
-  <input id="soalBaru" placeholder="Tulis soal">
-  <input id="opsiA" placeholder="Opsi A">
-  <input id="opsiB" placeholder="Opsi B">
-  <input id="opsiC" placeholder="Opsi C">
+    <select id="jawabanBenar">
+      <option value="0">Jawaban Benar: A</option>
+      <option value="1">Jawaban Benar: B</option>
+      <option value="2">Jawaban Benar: C</option>
+    </select>
 
-  <select id="jawabanBenar">
-    <option value="0">Jawaban Benar: A</option>
-    <option value="1">Jawaban Benar: B</option>
-    <option value="2">Jawaban Benar: C</option>
-  </select>
-
-  <button onclick="tambahSoal()">➕ Simpan Soal</button>
-
+    <button onclick="tambahSoal()">💾 Simpan Soal</button>
+  </div>
   <div id="daftarSoal"></div>
 </section>
 
@@ -70,6 +70,7 @@
 <section class="kuis hidden" id="kuisSection">
   <div class="quiz-card">
     <h3 id="infoKelompok"></h3>
+    <div class="timer">⏱️ <span id="timer">20</span> detik</div>
     <h2 id="soal"></h2>
 
     <button class="opsi" onclick="jawab(0)" id="opsi0"></button>
@@ -77,9 +78,19 @@
     <button class="opsi" onclick="jawab(2)" id="opsi2"></button>
 
     <div id="hasil"></div>
-
     <button class="next" onclick="lanjut()">➡️ Berikutnya</button>
     <button class="juara" onclick="lihatJuara()">🏆 Juara</button>
+  </div>
+</section>
+
+<!-- MINI GAME -->
+<section class="mini-game hidden" id="miniGame">
+  <div class="quiz-card">
+    <h3 id="judulGame"></h3>
+    <div class="timer">⏱️ <span id="timerGame">20</span> detik</div>
+    <div id="gameArea"></div>
+    <div id="hasilGame"></div>
+    <button class="next" onclick="lanjut()">➡️ Kelompok Berikut</button>
   </div>
 </section>
 
